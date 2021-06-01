@@ -1,0 +1,30 @@
+specVersion: 0.0.2
+description: Moonbeam lottery subgraph tutorial
+repository: https://github.com/PureStake/moonlotto-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: MoonLotto
+    network: mbase
+    source:
+      address: '0x0bb1ac004BacefFb1fb1a4aA3f74835372A5deD0'
+      abi: MoonLotto
+      startBlock: 33206
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mapping.ts
+      entities:
+        - Player
+        - Round
+        - Ticket
+      abis:
+        - name: MoonLotto
+          file: ./artifacts/contracts/MoonLotto.sol/MoonLotto.json
+      eventHandlers:
+        - event: PlayerJoined(uint256,address,uint256,bool,uint256)
+          handler: handlePlayerJoined
+        - event: LotteryResult(uint256,address,uint256,bool,uint256,uint256)
+          handler: handleLotteryResult

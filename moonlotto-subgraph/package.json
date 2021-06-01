@@ -1,0 +1,30 @@
+{
+  "name": "moonlotto-moonbase",
+  "description": "Moonbeam lottery subgraph tutorial for documentation",
+  "license": "MIT",
+  "version": "0.1.0",
+  "scripts": {
+    "contract-build": "npx hardhat compile",
+    "contract-deploy": "npx hardhat deploy_contracts --lottery-round-time 1800 --min-round-players 10 --ticket-price 1",
+    "contract-deploy-local": "npx hardhat deploy_contracts --network dev --lottery-round-time 10 --min-round-players 3",
+    "create": "npx graph create PureStake/moonlotto-moonbase --node https://api.thegraph.com/deploy/",
+    "create-staging": "npx graph create PureStake/moonlotto-moonbase --node https://api.staging.thegraph.com/deploy/",
+    "create-local": "npx graph create PureStake/moonlotto-dev --node http://127.0.0.1:8020",
+    "codegen": "npx graph codegen --output-dir src/types/",
+    "build": "npx graph build",
+    "deploy": "npx graph deploy PureStake/moonlotto-moonbase --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy-staging": "npx graph deploy PureStake/moonlotto-moonbase --ipfs https://api.staging.thegraph.com/ipfs/ --node https://api.staging.thegraph.com/deploy/",
+    "deploy-local": "npx graph deploy PureStake/moonlotto-dev --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-ts": "^0.20.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "ethers": "^5.0.31",
+    "hardhat": "^2.0.11"
+  }
+}

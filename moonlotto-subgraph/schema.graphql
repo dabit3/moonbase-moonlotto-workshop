@@ -1,0 +1,22 @@
+type Round @entity {
+  id: ID!
+  index: BigInt!
+  prize: BigInt! 
+  timestampInit: BigInt!
+  timestampEnd: BigInt
+  tickets: [Ticket!] @derivedFrom(field: "round")
+}
+
+type Player @entity {
+  id: ID!
+  address: Bytes!
+  tickets: [Ticket!] @derivedFrom(field: "player")
+}
+
+type Ticket @entity {
+  id: ID!
+  isGifted: Boolean!
+  player: Player!
+  round: Round!
+  isWinner: Boolean!
+}
