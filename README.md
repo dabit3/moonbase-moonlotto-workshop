@@ -264,7 +264,7 @@ Try out the following queries to see what selection sets you are able to query f
 
 # players
 {
-	players {
+  players {
     id
     address
     tickets {
