@@ -202,7 +202,7 @@ export function handleLotteryResult(event: LotteryResult): void {
 
 Next, open __package.json__ and update the `deploy` script to include the project name from the Graph explorer.
 
-Replace the subgraph name - should look something like this: `username/subgraphname`:
+Replace the subgraph name. It should look something like this: `username/subgraphname`:
 
 ```sh
 "deploy": "npx graph deploy username/subgraphname --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
