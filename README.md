@@ -4,7 +4,7 @@ Learn how to build a GraphQL API to query data for a Lottery contract on Moonbas
 
 > See also [Using The Graph on Moonbeam](https://docs.moonbeam.network/integrations/thegraph/)
 
-![Subgraph Workshop](images/header.png)
+![Subgraph Workshop](images/thegraph.png)
 
 ### Prerequisites
 
